@@ -12,7 +12,9 @@ public class FracCalcCheckpoint1 {
 
     public static void main(String[] args) {
         Scanner console = new Scanner(System.in);
-        String answer;
+        String answer = console.nextLine();
+        
+        System.out.println(produceAnswer(answer));
     }
 
     public static String produceAnswer(String input) { 
@@ -20,7 +22,7 @@ public class FracCalcCheckpoint1 {
         
         if (input.contains(" ")) {
         	fracExpr = input.split(" ");
-        	return Arrays.toString(fracExpr);
+        	return fracExpr[2];
         } else {
         	throw new IllegalArgumentException("Please enter spaces between first operand and operator and/or second operand and operator.");
         }
