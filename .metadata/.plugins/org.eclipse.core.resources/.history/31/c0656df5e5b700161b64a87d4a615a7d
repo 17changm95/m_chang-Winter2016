@@ -50,12 +50,10 @@ public class FracCalcCheckpoint3 {
     		whole = Integer.parseInt(input.substring(0, input.indexOf("_")));
     		numer1 = Integer.parseInt(input.substring(input.indexOf("_") + 1, input.indexOf("/")));
     		denom = Integer.parseInt(input.substring(input.indexOf("/") + 1));
-		} else {
-			//add something here later
 		}
 		
-		int numer2 = denom * whole + numer1;
-		String answer = numer2 + "/" + denom;
+		int numerator2 = denominator * wholeNum + numerator1;
+		String answer = numerator2 + "/" + denominator;
 		return answer;
 	}
     
@@ -64,9 +62,9 @@ public class FracCalcCheckpoint3 {
         	if (input[i].contains("/") && input[i].contains("_")) {
         		input[i] = toImproperFrac(input[i]);
         	} else {
+        		
         	}
         }
-                
     }
     
     public static String produceAnswer(String input) { 

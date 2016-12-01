@@ -36,37 +36,12 @@ public class FracCalcCheckpoint3 {
     	if (input.contains(" ")) {
         	fracExpr = input.split(" ");
     	} else {
-        	throw new IllegalArgumentException("Please enter spaces between operands and operators.");
+        	throw new IllegalArgumentException("Please enter spaces between first operand and operator and/or second operand and operator.");
         }
     }
     
-	public static String toImproperFrac(String input){
-		//converting mixed numbers to improper fractions
-		int whole;
-		int numer1;
-		int denom;
-		
-		if (input.contains("_") && input.contains("/")) {
-    		whole = Integer.parseInt(input.substring(0, input.indexOf("_")));
-    		numer1 = Integer.parseInt(input.substring(input.indexOf("_") + 1, input.indexOf("/")));
-    		denom = Integer.parseInt(input.substring(input.indexOf("/") + 1));
-		} else {
-			//add something here later
-		}
-		
-		int numer2 = denom * whole + numer1;
-		String answer = numer2 + "/" + denom;
-		return answer;
-	}
-    
     public static String addition(String[] input) {
-        for (int i = 0; i < input.length; i++) {
-        	if (input[i].contains("/") && input[i].contains("_")) {
-        		input[i] = toImproperFrac(input[i]);
-        	} else {
-        	}
-        }
-                
+        
     }
     
     public static String produceAnswer(String input) { 

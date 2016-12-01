@@ -64,9 +64,9 @@ public class FracCalcCheckpoint3 {
         	if (input[i].contains("/") && input[i].contains("_")) {
         		input[i] = toImproperFrac(input[i]);
         	} else {
+        		
         	}
         }
-                
     }
     
     public static String produceAnswer(String input) { 
