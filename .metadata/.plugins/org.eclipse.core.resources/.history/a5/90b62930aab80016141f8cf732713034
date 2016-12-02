@@ -66,7 +66,7 @@ public class FracCalcCheckpoint3 {
         	} else {
         	}
         }
-        
+                
     }
     
     public static String produceAnswer(String input) { 
