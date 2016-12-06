@@ -40,7 +40,7 @@ public class FracCalcCheckpoint3 {
         }
     }
     
-	public static String toImproperFrac(String input){
+	public static int[] toImproperFrac(String input){
 		//converting mixed numbers to improper fractions
 		int whole;
 		int numer1;
@@ -51,22 +51,27 @@ public class FracCalcCheckpoint3 {
     		numer1 = Integer.parseInt(input.substring(input.indexOf("_") + 1, input.indexOf("/")));
     		denom = Integer.parseInt(input.substring(input.indexOf("/") + 1));
 		} else {
-			//add something here later
+			whole = 0;
+			numer1 = Integer.parseInt(input.substring(0, input.indexOf("/")));
+    		denom = Integer.parseInt(input.substring(input.indexOf("/") + 1));
 		}
 		
 		int numer2 = denom * whole + numer1;
-		String answer = numer2 + "/" + denom;
+		int[] answer = {numer2, denom};
 		return answer;
 	}
     
     public static String addition(String[] input) {
-        for (int i = 0; i < input.length; i++) {
-        	if (input[i].contains("/") && input[i].contains("_")) {
-        		input[i] = toImproperFrac(input[i]);
-        	} else {
-        	}
+        int[][] numInput = new int[input.length][];
+        //arrays within arrays
+    	for (int i = 0; i < input.length; i++) {
+        	numInput[i] = toImproperFrac(input[i]);
         }
-        
+    	
+    	    	
+        for (int i = 0; i < numInput.length; i++) {
+        	
+        }
     }
     
     public static String produceAnswer(String input) { 
