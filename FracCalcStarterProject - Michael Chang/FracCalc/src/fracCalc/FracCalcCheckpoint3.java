@@ -35,6 +35,7 @@ public class FracCalcCheckpoint3 {
     	
     	if (input.contains(" ")) {
         	fracExpr = input.split(" ");
+        	return fracExpr;
     	} else {
         	throw new IllegalArgumentException("Please enter spaces between operands and operators.");
         }
@@ -61,46 +62,145 @@ public class FracCalcCheckpoint3 {
 		return answer;
 	}
     
-    public static String addition(String[] input) {
-        int[][] numInput = new int[input.length][];
-        //arrays within arrays
-    	for (int i = 0; i < input.length; i++) {
-        	numInput[i] = toImproperFrac(input[i]);
-        }
-    	
-    	    	
-        for (int i = 0; i < numInput.length; i++) {
-        	
+    public static int[] addition(int[] input1, int[] input2) {
+        int[] answer = new int[2];
+        
+    	if (input2[1] == input1[1]) {
+        	answer[0] = input1[0] + input2[0];
+        	answer[1] = input1[1];
+        	return answer;
+        } else if (input2 != input1) {
+        	int numer1 = input1[0] * input2[1];
+        	int denom = input1[1] * input2[1];
+        	int numer2 = input1[1] * input2[0];
+        	answer[0] = numer1 + numer2;
+        	answer[1] = denom;
+        	return answer;
+        } else {
+        	throw new IllegalArgumentException("You forgot something, or mebbe datatype is wrong.");
         }
     }
     
-    public static String produceAnswer(String input) { 
+    public static int[] subtraction(int[] input1, int[] input2) {
+        int[] answer = new int[2];
         
-        if (input.contains(" ")) {
-        	fracExpr = input.split(" ");
-        	
-        	if (fracExpr[2].contains("_")) {
-        		whole = "whole:" + fracExpr[2].substring(0, fracExpr[2].indexOf("_")) + " ";
-        		numer = "numerator:" + fracExpr[2].substring(fracExpr[2].indexOf("_") + 1, fracExpr[2].indexOf("/")) + " ";
-        		denom = "denominator:" + fracExpr[2].substring(fracExpr[2].indexOf("/") + 1);
-        		
-        		return whole + numer + denom;
-        	} else if (fracExpr[2].contains("/") == false) {
-        		whole = "whole:" + fracExpr[2] + " ";
-        		numer = "numerator:" + 0 + " ";
-        		denom = "denominator:" + 1;
-        		
-        		return whole + numer + denom;
-        	} else if (fracExpr[2].contains("_") == false && fracExpr[2].contains("/")) {
-        		whole = "whole:" + 0 + " ";
-        		numer = "numerator:" + fracExpr[2].substring(0, fracExpr[2].indexOf("/")) + " ";
-        		denom = "denominator:" + fracExpr[2].substring(fracExpr[2].indexOf("/") + 1);
-        		
-        		return whole + numer + denom;
-        	} else {
-        		throw new IllegalArgumentException("Please enter proper values.");
-        	}
-        } else (input.contains("quit")) {
-        	return "";
+    	if (input2[1] == input1[1]) {
+        	answer[0] = input1[0] - input2[0];
+        	answer[1] = input1[1];
+        	return answer;
+        } else if (input2 != input1) {
+        	int numer1 = input1[0] * input2[1];
+        	int denom = input1[1] * input2[1];
+        	int numer2 = input1[1] * input2[0];
+        	answer[0] = numer1 - numer2;
+        	answer[1] = denom;
+        	return answer;
+        } else if (input1[1] == 0 || input2[1] == 0) {
+        	throw new IllegalArgumentException("Undefined.");
+        } else {
+        	throw new IllegalArgumentException("You forgot something, or mebbe datatype is wrong.");
+        }
+    }
+    
+    public static int[] multiplication(int[] input1, int[] input2) {
+        int[] answer = new int[2];
+        
+        if (input1[1] != 0 && input2[1] != 0) {
+        	answer[0] = input1[0] * input2[0];
+        	answer[1] = input1[1] * input2[1];
+        	return answer;
+        } else if (input1[1] == 0 || input2[1] == 0) {
+        	throw new IllegalArgumentException("Undefined.");
+        } else {
+        	throw new IllegalArgumentException("You forgot something, or mebbe datatype is wrong.");
+        }
+    }
+    
+    public static int[] division(int[] input1, int[] input2) {
+    	int[] answer = new int[2];
+    	int numer2 = input2[0];
+    	int denom2 = input2[1];
+    	input2[0] = denom2;
+    	input2[1] = numer2;
+    	
+    	if (input1[1] != 0 && input2[1] != 0) {
+        	answer[0] = input1[0] * input2[0];
+        	answer[1] = input1[1] * input2[1];
+        	return answer;
+        } else if (input1[1] == 0 || input2[1] == 0) {
+        	throw new IllegalArgumentException("Undefined.");
+        } else {
+        	throw new IllegalArgumentException("You forgot something, or mebbe datatype is wrong.");
+        }
+    }
+    
+    public static String intArrayConvert(int[] input) {
+    	String answer;
+    	int whole = 0;
+    	int numer = input[0];
+    	int denom = input[1];
+    	
+    	if (numer > denom) {
+    		whole = numer / denom;
+    		numer = numer % denom;
+    		return answer = whole + "_" + numer + "/" + denom;
+    	} else if (numer == denom) {
+    		return answer = "1";
+    	} else if (numer == 0) {
+    		return answer = "0";
+    	} else if (denom == 0) {
+    		throw new IllegalArgumentException("Undefined");
+    	} else{
+    		return answer = numer + "/" + denom;
+    	}
+    }
+    
+    public static String produceAnswer(String input) {
+    	if (input.contains("/")) {
+	    	String[] parsedInput = parseOperand(input);
+	    	int[] frac1 = toImproperFrac(parsedInput[0]);
+	    	int[] frac2 = toImproperFrac(parsedInput[2]);
+	    	int[] sum = new int[2];
+	    	int[] difference = new int[2];
+	    	int[] quotient = new int[2];
+	    	int[] product = new int[2];
+	    	
+	    	if (parsedInput[1].equals("+")) {
+	    		sum = addition(frac1, frac2);
+	    		return intArrayConvert(sum);
+	    	} else if (parsedInput[1].equals("-")) {
+	    		difference = subtraction(frac1, frac2);
+	    		return intArrayConvert(difference);
+	    	} else if ((parsedInput[1].equals("*"))) {
+	    		product = multiplication(frac1, frac2);
+	    		return intArrayConvert(product);
+	    	} else if (parsedInput[1].equals("/")) {
+	    		quotient = division(frac1, frac2);
+	    		return intArrayConvert(quotient);
+	    	}
+    	} else if (input.contains("/") == false) {
+    		String[] parsedInput = parseOperand(input);
+    		int num1 = Integer.parseInt(parsedInput[0]);
+    		int num2 = Integer.parseInt(parsedInput[1]);
+    		int answer;
+    		
+    		if (input.contains("+")) {
+    			answer = num1 + num2;
+    			return Integer.toString(answer);
+    		} else if (input.contains("-")) {
+    			answer = num1 - num2;
+    			return Integer.toString(answer);
+    		} else if (input.contains("*")) {
+    			answer = num1 * num2;
+    			return Integer.toString(answer);
+    		} else if (input.contains("/")) {
+    			answer = num1 / num2;
+    			return Integer.toString(answer);
+    		}
+    	} else if (input.contains("quit")) {
+    		return "";
+    	} else {
+    		throw new IllegalArgumentException("Please enter proper values.");
+    	}
     }
 }
