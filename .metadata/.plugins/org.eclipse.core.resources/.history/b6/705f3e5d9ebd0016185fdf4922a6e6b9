@@ -156,27 +156,48 @@ public class FracCalcCheckpoint3 {
     }
     
     public static String produceAnswer(String input) {
-    	String[] parsedInput = parseOperand(input);
-    	int[] num1 = toImproperFrac(parsedInput[0]);
-    	int[] num2 = toImproperFrac(parsedInput[2]);
-    	int[] sum = new int[2];
-    	int[] difference = new int[2];
-    	int[] quotient = new int[2];
-    	int[] product = new int[2];
-    	
-    	if (parsedInput[1].equals("+")) {
-	    	sum = addition(num1, num2);
-	    	return intArrayConvert(sum);
-	    } else if (parsedInput[1].equals("-")) {
-	    	difference = subtraction(num1, num2);
-	    	return intArrayConvert(difference);
-	    } else if ((parsedInput[1].equals("*"))) {
-	    	product = multiplication(num1, num2);
-	    	return intArrayConvert(product);
-	    } else if (parsedInput[1].equals("/")) {
-	    	quotient = division(num1, num2);
-	    	return intArrayConvert(quotient);
-	    } else if (input.contains("quit")) {
+    	int answer;
+    	if (input.contains("/")) {
+	    	String[] parsedInput = parseOperand(input);
+	    	int[] frac1 = toImproperFrac(parsedInput[0]);
+	    	int[] frac2 = toImproperFrac(parsedInput[2]);
+	    	int[] sum = new int[2];
+	    	int[] difference = new int[2];
+	    	int[] quotient = new int[2];
+	    	int[] product = new int[2];
+	    	
+	    	if (parsedInput[1].equals("+")) {
+	    		sum = addition(frac1, frac2);
+	    		return intArrayConvert(sum);
+	    	} else if (parsedInput[1].equals("-")) {
+	    		difference = subtraction(frac1, frac2);
+	    		return intArrayConvert(difference);
+	    	} else if ((parsedInput[1].equals("*"))) {
+	    		product = multiplication(frac1, frac2);
+	    		return intArrayConvert(product);
+	    	} else if (parsedInput[1].equals("/")) {
+	    		quotient = division(frac1, frac2);
+	    		return intArrayConvert(quotient);
+	    	}
+    	} else if (input.contains("/") == false) {
+    		String[] parsedInput = parseOperand(input);
+    		int num1 = Integer.parseInt(parsedInput[0]);
+    		int num2 = Integer.parseInt(parsedInput[1]);
+    		
+    		if (input.contains("+")) {
+    			answer = num1 + num2;
+    			return Integer.toString(answer);
+    		} else if (input.contains("-")) {
+    			answer = num1 - num2;
+    			return Integer.toString(answer);
+    		} else if (input.contains("*")) {
+    			answer = num1 * num2;
+    			return Integer.toString(answer);
+    		} else if (input.contains("/")) {
+    			answer = num1 / num2;
+    			return Integer.toString(answer);
+    		}
+    	} else if (input.contains("quit")) {
     		return "";
     	} else {
     		throw new IllegalArgumentException("Please enter proper values.");

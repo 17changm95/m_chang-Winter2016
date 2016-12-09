@@ -181,5 +181,6 @@ public class FracCalcCheckpoint3 {
     	} else {
     		throw new IllegalArgumentException("Please enter proper values.");
     	}
+    	return "";
     }
 }
