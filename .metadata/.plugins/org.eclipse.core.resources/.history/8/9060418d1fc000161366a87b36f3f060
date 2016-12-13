@@ -1,0 +1,8 @@
+
+public class CalculatorLol {
+	
+	public static void main(String[] args) {
+		System.out.println(53+29);
+		System.out.println(918./6173.);
+	}
+}
