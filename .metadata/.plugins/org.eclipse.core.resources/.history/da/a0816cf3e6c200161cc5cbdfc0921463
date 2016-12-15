@@ -57,6 +57,6 @@ public class Dog {
 	
 	//toString method used to print breed and weight nicely
 	public String toString() {
-		return "Dog breed: " + breed + "\nDog weight: " + weight;
+		return "Dog breed: " + breed + "\nDog weight:" + weight;
 	}
 }

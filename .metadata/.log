@@ -1448,3 +1448,6 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY org.eclipse.e4.ui.workbench 2 0 2016-12-15 08:30:15.314
 !MESSAGE Removing part descriptor with the 'netconsole2.views.RiologView' id and the 'Riolog' description. Points to the invalid 'bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView' class.
+
+!ENTRY org.eclipse.core.resources 4 567 2016-12-15 08:50:58.181
+!MESSAGE The project description file (.project) for 'FracCalc' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
