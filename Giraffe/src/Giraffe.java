@@ -48,5 +48,27 @@ public class Giraffe {
 		return "This animal has a personality. This animal has feelings. Don't take that right away from them you cruel human.";
 	}
 	
-	public getAge
+	public int getAge() {
+		return age;
+	}
+	
+	public int getNeckLength() {
+		return neckLength;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public double getWeight() {
+		return weight;
+	}
+	
+	public String getFavColor() {
+		return favColor;
+	}
+	
+	public String toString() {
+		return "Giraffe name: " + name + "\nGiraffe age: " + age + "\nGiraffe weight: " + weight + "\nGiraffe neck length: " + neckLength + "\nGiraffe favorite color: " + favColor;
+	}
 }
