@@ -69,7 +69,7 @@ public class Dog {
 	}
 	
 	public BufferedImage showImage() throws MalformedURLException, IOException {
-		BufferedImage img = ImageIO.read(new URL("https://lh4.googleusercontent.com/-FKDWc5XwcQg/V5VmWGyCKyI/AAAAAAAAuR4/F0AQLi-jEzkFIZ7FATsyrxAODOueQzbEQCJkC/s160-k-no/x"));
+		BufferedImage img = ImageIO.read(new URL("https://lh4.googleusercontent.com/-FKDWc5XwcQg/V5VmWGyCKyI/AAAAAAAAuR4/F0AQLi-jEzkFIZ7FATsyrxAODOueQzbEQCJkC/s160-k-no/"));
 		return img;
 	}
 }

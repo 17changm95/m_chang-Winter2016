@@ -4,13 +4,7 @@
  * @since 12/11/2016
  */
 
-import java.awt.image.BufferedImage;
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.*;
-
-import javax.imageio.ImageIO;
 
 //This is a Dog object, which I am creating for practice. I need to be able to create objects.
 public class Dog {
@@ -68,8 +62,7 @@ public class Dog {
 		return "Dog breed: " + breed + "\nDog weight: " + weight;
 	}
 	
-	public BufferedImage showImage() throws MalformedURLException, IOException {
-		BufferedImage img = ImageIO.read(new URL("https://lh4.googleusercontent.com/-FKDWc5XwcQg/V5VmWGyCKyI/AAAAAAAAuR4/F0AQLi-jEzkFIZ7FATsyrxAODOueQzbEQCJkC/s160-k-no/x"));
-		return img;
+	public ImageIO showImage() {
+		return 
 	}
 }

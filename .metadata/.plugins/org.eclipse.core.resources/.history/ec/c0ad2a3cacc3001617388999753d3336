@@ -14,6 +14,5 @@ public class GoingToTheDogs {
 		Dog BobsDog = new Dog("Dalmatian", 55);
 		Dog PetesDog = BobsDog;
 		System.out.println(PetesDog.makeNoise());
-		System.out.println(BobsDog.showImage());
 	}
 }

@@ -68,8 +68,8 @@ public class Dog {
 		return "Dog breed: " + breed + "\nDog weight: " + weight;
 	}
 	
-	public BufferedImage showImage() throws MalformedURLException, IOException {
-		BufferedImage img = ImageIO.read(new URL("https://lh4.googleusercontent.com/-FKDWc5XwcQg/V5VmWGyCKyI/AAAAAAAAuR4/F0AQLi-jEzkFIZ7FATsyrxAODOueQzbEQCJkC/s160-k-no/x"));
+	public BufferedImage showImage() {
+		BufferedImage img = ImageIO.read(new URL("http://stackoverflow.com/content/img/so/logo.png"));
 		return img;
 	}
 }
