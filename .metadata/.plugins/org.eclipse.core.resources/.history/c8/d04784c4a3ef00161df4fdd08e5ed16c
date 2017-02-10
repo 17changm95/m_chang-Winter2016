@@ -13,7 +13,11 @@ public class StudentAdvanceTicket extends Ticket {
 		}
 	}
 	
+	public int getNumber() {
+		return StudentAdvanceTicket.number;
+	}
+	
 	public String toString() {
-		return "Number: " + getNumber() + ", Price: " + getPrice() + " (ID required)";
+		return "Number: " +  + ", Price: " + getPrice() + " (ID required)";
 	}
 }

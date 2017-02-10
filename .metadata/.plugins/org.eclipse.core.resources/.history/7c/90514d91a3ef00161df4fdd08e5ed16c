@@ -12,8 +12,4 @@ public class StudentAdvanceTicket extends Ticket {
 			return 40.0;
 		}
 	}
-	
-	public String toString() {
-		return "Number: " + getNumber() + ", Price: " + getPrice() + " (ID required)";
-	}
 }
