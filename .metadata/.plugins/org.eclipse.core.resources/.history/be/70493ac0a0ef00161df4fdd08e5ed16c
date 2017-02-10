@@ -1,0 +1,7 @@
+
+public class AdvanceTicket extends Ticket{
+	
+	private int days; //number of days before event on day of purchase 
+	
+	public 
+}

@@ -4,11 +4,6 @@ public class Ticket {
 	private int number;
 	private double price;
 	
-	public Ticket() {
-		this.number = 0;
-		this.price = 30.0;
-	}
-	
 	public Ticket(int num) {
 		this.number = num;
 	}
@@ -18,6 +13,6 @@ public class Ticket {
 	}
 	
 	public String toString() {
-		return "Number: " + this.number + ", Price: " + getPrice();
+		return "Number: " + this.number + ", Price: " + this.price;
 	}
 }

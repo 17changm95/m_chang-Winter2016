@@ -1,0 +1,11 @@
+
+public class ClientCode {
+
+	public static void main(String[] args) {
+		Ticket myTicket = new Ticket(1);
+		myTicket.toString();
+		WalkupTicket myWalkUp = new WalkupTicket(1);
+		myWalkUp.getPrice();
+		myWalkUp.toString();
+	}
+}

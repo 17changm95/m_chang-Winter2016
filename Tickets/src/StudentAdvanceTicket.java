@@ -1,0 +1,15 @@
+
+public class StudentAdvanceTicket extends Ticket {
+
+	public StudentAdvanceTicket(int num) {
+		super(num);
+	}
+	
+	public double getPrice(int day) {
+		if (day >= 10) {
+			return 30.0;
+		} else {
+			return 40.0;
+		}
+	}
+}

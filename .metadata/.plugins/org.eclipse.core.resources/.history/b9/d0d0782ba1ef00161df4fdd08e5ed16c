@@ -1,0 +1,9 @@
+
+public class StudentAdvanceTicket extends Ticket {
+
+	public StudentAdvanceTicket(int num) {
+		super(num);
+	}
+	
+	
+}

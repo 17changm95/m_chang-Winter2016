@@ -18,6 +18,6 @@ public class Ticket {
 	}
 	
 	public String toString() {
-		return "Number: " + this.number + ", Price: " + getPrice();
+		return "Number: " + this.number + ", Price: " + this.price;
 	}
 }
