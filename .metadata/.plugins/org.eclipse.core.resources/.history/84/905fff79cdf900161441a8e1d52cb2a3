@@ -6,11 +6,11 @@ public class FileProcessing {
 	public static void main(String[] args) 
 			throws FileNotFoundException {
 		// Initializes num1, num2, and change. change is equal to difference of num2 and num1
-		double num1;
-		double num2;
-		double num3;
-		double change1;
-		double change2;
+		double num1 = 0;
+		double num2 = 0;
+		double num3 = 0;
+		double change1 = num2 - num1;
+		double change2 = num3 - num2;
 		
 		Scanner input = new Scanner(new File("./resources/weather.txt"));
 		
@@ -19,14 +19,10 @@ public class FileProcessing {
 			// Consuming input in weather.txt
 			num1 = input.nextDouble();
 			num2 = input.nextDouble();
-			change1 = num2 - num1;
-			System.out.println(change1);
+			num3 = input.nextDouble();
 			
-			if (input.hasNextLine()) {
-				num3 = input.nextDouble();
-				change2 = num3 - num2;
-				System.out.println(change2);
-			}
+			System.out.println(change1);
+			System.out.println(change2);
 		}
 		
 	}

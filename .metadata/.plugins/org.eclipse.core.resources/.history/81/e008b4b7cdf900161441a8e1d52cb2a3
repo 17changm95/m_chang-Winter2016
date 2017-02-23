@@ -22,11 +22,10 @@ public class FileProcessing {
 			change1 = num2 - num1;
 			System.out.println(change1);
 			
-			if (input.hasNextLine()) {
+			/*if (input.hasNextLine()) {
 				num3 = input.nextDouble();
-				change2 = num3 - num2;
 				System.out.println(change2);
-			}
+			} */
 		}
 		
 	}

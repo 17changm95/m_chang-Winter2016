@@ -1,0 +1,24 @@
+import java.io.*;		// For File
+import java.util.*;		// For Scanner
+
+public class FileProcessing {
+
+	public static void main(String[] args) 
+			throws FileNotFoundException {
+		
+		Scanner input = new Scanner(new File("weather.txt"));
+		
+		// Using while loop to repeat printing out new lines of output for the difference between pairs of numbers
+		while (input.hasNextLine()) {
+			for (int i = 1; i <= 2; i++) {
+				double d1 = input.nextDouble(); // Consuming input in weather.txt
+				double num1;
+				double num2;
+				double change;
+				
+			}
+		}
+		
+	}
+
+}
