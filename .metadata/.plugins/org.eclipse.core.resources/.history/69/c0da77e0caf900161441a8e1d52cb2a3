@@ -1,0 +1,10 @@
+import java.io.*;		//For File
+import java.util.*;		//For Scanner
+
+public class FileProcessing {
+
+	public static void main(String[] args) {
+		
+	}
+
+}
