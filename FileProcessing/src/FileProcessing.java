@@ -1,3 +1,8 @@
+/* @author Michael Chang Period 1 AP CS
+ * @version 1.0
+ * @since 2/21/17
+ */
+
 import java.io.*;		// For File
 import java.util.*;		// For Scanner
 
@@ -5,30 +10,38 @@ public class FileProcessing {
 
 	public static void main(String[] args) 
 			throws FileNotFoundException {
-		// Initializes num1, num2, and change. change is equal to difference of num2 and num1
-		double num1;
-		double num2;
-		double num3;
-		double change1;
-		double change2;
-		
 		Scanner input = new Scanner(new File("./resources/weather.txt"));
 		
+		// Initializes num1, num2, and change. change is equal to difference of num2 and num1
+		double num1 = input.nextDouble();
+		double num2 = input.nextDouble();
+		double change = num2 - num1;
+		
 		// Using while loop to repeat printing out new lines of output for the difference between pairs of numbers
-		while (input.hasNextLine()) {
-			// Consuming input in weather.txt
-			num1 = input.nextDouble();
-			num2 = input.nextDouble();
-			change1 = num2 - num1;
-			System.out.println(change1);
+		for (int i = 1; i <= 7; i++) {
+			//Prints out whole expression and equality of change for each pair
+			System.out.println(num1 + "°C" + " to " + num2 + "°C" + ", change = " + round2(change));
 			
-			if (input.hasNextLine()) {
-				num3 = input.nextDouble();
-				change2 = num3 - num2;
-				System.out.println(change2);
+			// Stores value of num2 into num1 for subsequent pair
+			num1 = num2;
+			
+			// Replaces value of num2 with value immediately after num2 if i != 7. At i = 7 no more new pairs should be created.
+			if (i != 7) {
+				num2 = input.nextDouble();
+				change = num2 - num1;
 			}
 		}
 		
+	}
+	
+	public static double round2(double num) {
+		//Rounds number to the nearest hundredth work
+		double numAdded = num + 0.005;
+		double numMult = numAdded * 100;
+		int numCasted = (int) numMult;
+		double answer = (double) numCasted / 100.0;
+		
+		return answer;
 	}
 
 }

@@ -1,0 +1,34 @@
+/* @author Michael Chang Period 1 AP CS
+ * @version 1.0
+ * @since 2/21/17
+ */
+
+import java.io.*;		// For File
+import java.util.*;		// For Scanner
+
+public class FileProcessing {
+
+	public static void main(String[] args) 
+			throws FileNotFoundException {
+		// Initializes num1, num2, and change. change is equal to difference of num2 and num1
+		
+		Scanner input = new Scanner(new File("./resources/weather.txt"));
+		
+		// Using while loop to repeat printing out new lines of output for the difference between pairs of numbers
+		while (input.hasNextLine()) {
+			// Consuming input in weather.txt
+			num1 = input.nextDouble();
+			num2 = input.nextDouble();
+			change1 = num2 - num1;
+			System.out.println(change1);
+			
+			if (input.hasNextLine()) {
+				num3 = input.nextDouble();
+				change2 = num3 - num2;
+				System.out.println(change2);
+			}
+		}
+		
+	}
+
+}

@@ -6,5 +6,5 @@ public class Employee {
 	private String edDegree;
 	private double age;
 	
-	public 
+	public lol
 }
